@@ -1,6 +1,8 @@
 studentArray = []
 
 const dropAll = () => {
+  closeText.style.display = "block"
+  dropText.style.display = "none"
   document.getElementById('closeOn').style.display = "block";
   document.getElementById('dropOn').style.display = "none";
  class Fifteen {
@@ -30,6 +32,7 @@ const dropAll = () => {
 
 
  studentArray.push(one, two, three, four, five, six,seven, eight, nine, ten,eleven,twelve, thirteen, fourteen, fifteen)
+ display.innerHTML = ""
  studentArray.map((information, i)=>{
   display.innerHTML += `
   <div class="book d-flex flex-column m-3">
