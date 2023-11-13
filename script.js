@@ -1,19 +1,24 @@
-studentArray = []
+let studentArray = []
+
 
 const dropAll = () => {
   closeText.style.display = "block"
   dropText.style.display = "none"
   document.getElementById('closeOn').style.display = "block";
   document.getElementById('dropOn').style.display = "none";
- class Fifteen {
-  constructor(cname, age, gender, height, skinColor){
-    this.cname = cname;
-    this.age = age;
-    this.gender = gender;
-    this.height = height;
-    this.skinColor= skinColor;
+  // const savedStudentArray = JSON.parse(localStorage.getItem('studentArray')) || [];
+  
+  class Fifteen {
+    constructor(cname, age, gender, height, skinColor){
+     this.cname = cname;
+     this.age = age;
+     this.gender = gender;
+     this.height = height;
+     this.skinColor= skinColor;
   } 
  }
+
+
  let one = new Fifteen("Adebayo", 20, "Male", "5.6 ft", "Dark")
  let two = new Fifteen("Damola", 23, "Male", "5.2 ft", "Dark")
  let three = new Fifteen("Timilehin", 24, "Male", "5.7ft", "brown")
@@ -30,31 +35,33 @@ const dropAll = () => {
  let fourteen = new Fifteen("Halimot", 27, "Female", "5.5 ft", "DarkJade")
  let fifteen = new Fifteen("Temitope", 23, "Male", "5.6 ft", "brown")
 
-
  studentArray.push(one, two, three, four, five, six,seven, eight, nine, ten,eleven,twelve, thirteen, fourteen, fifteen)
- display.innerHTML = ""
- studentArray.map((information, i)=>{
-  display.innerHTML += `
-  <div class="book d-flex flex-column m-3">
-  <h2>${information.cname}</h2>
-  <p>${information.age} years old</p>
-  <p>${information.gender}</p>
-  <p>${information.height}</p>
-  <p>${information.skinColor}</p>
-  <div class="cover">
-  <p class="fs-2">${i+1}</p>
-  </div>
- </div>
-  `
- })
+    for(let i = 0; i < 15; i++){
+      const information = studentArray[i];
+      display.innerHTML += `
+      <div class="book d-flex flex-column m-3" id="bag">
+      <h2>${information.cname}</h2>
+      <p>${information.age} years old</p>
+      <p>${information.gender}</p>
+      <p>${information.height}</p>
+      <p>${information.skinColor}</p>
+      <div class="cover">
+      <p class="fs-2">${i+1}</p>
+      </div>
+      </div>
+      `
+    }
+
 
 
 }
-
-
 const closeAll = () => {
+  // document.getElementById('display').style.display = "none";
   document.getElementById('dropOn').style.display = "block";
   document.getElementById('closeOn').style.display = "none";
   display.innerHTML = ""
+
 }
+
+
 
