@@ -6,7 +6,8 @@ const dropAll = () => {
   dropText.style.display = "none"
   document.getElementById('closeOn').style.display = "block";
   document.getElementById('dropOn').style.display = "none";
-  // const savedStudentArray = JSON.parse(localStorage.getItem('studentArray')) || [];
+  const savedStudentArray = JSON.parse(localStorage.getItem('studentArray'));
+  console.log(savedStudentArray);
   
   class Fifteen {
     constructor(cname, age, gender, height, skinColor){
@@ -63,5 +64,8 @@ const closeAll = () => {
 
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  dropAll()
+});
 
 
